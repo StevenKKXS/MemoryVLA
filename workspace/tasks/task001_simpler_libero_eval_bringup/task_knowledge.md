@@ -1,4 +1,4 @@
-<!-- METADATA:SESSION=0 -->
+<!-- METADATA:SESSION=3 -->
 
 # task_knowledge — task001_simpler_libero_eval_bringup
 
@@ -53,3 +53,28 @@
 **解决**：`MEMVLA_LLAMA2_7B_LOCAL_PATH` 指向本地镜像目录（含 config.json / tokenizer.model / tokenizer_config.json）。LLaMA 权重本身在 ckpt .pt 里，不需要从 HF 拉。`scripts/setup_libero.sh` step 9a 自动 materialize 这个本地镜像目录。
 
 **为什么**：`prismatic/models/backbones/llm/llama2.py` 用 `AutoConfig.from_pretrained` 加载 config 骨架，再从 .pt 灌权重。只需要 config+tokenizer 的 "mirror"，不需要 weight 文件。
+
+## 知识点 6 — 跨 fork PR 的 base 选择（重要！）
+
+**触发场景**：GitHub UI 上点 "Create pull request" 时，base 分支下拉默认会 fallback 到 upstream fork 的 default branch。
+
+**现象**：你以为是把 PR 打到自己的 fork（`StevenKKXS:openvla-codebase`），结果 base 被设成了 upstream（`shihao1895:openvla-codebase`）。PR 能开，但 merge 权限在 upstream owner 手里，不在你自己手里；同时也把你的"内部进展"当众 PR 给了 upstream，噪声。
+
+**解决**：
+- 跨 fork base 无法通过 API/UI 编辑，必须关掉 PR 重开
+- 打直达链接 `https://github.com/<YourFork>/MemoryVLA/compare/<base>...<head>?expand=1` 直接 compare 同 repo 内的两个分支，避免被 GitHub 默认选 upstream
+- 例：`https://github.com/StevenKKXS/MemoryVLA/compare/openvla-codebase...intern_memvla_developer/task001_simpler_libero_eval_bringup?expand=1`
+
+**为什么**：GitHub "compare across forks" 默认假设你开 PR 是给 upstream 贡献的。想在 fork 内部 merge，base 必须明确指到自己 fork。一旦 PR 创建后无法再跨 fork 切换 base owner，只能 close + 重开。
+
+## 知识点 7 — Feature branch 自包含、但外部资产不在 git
+
+**触发场景**：别人（或未来的自己）想从本 PR 分支复现。
+
+**解决**：
+1. `git checkout intern_memvla_developer/task001_simpler_libero_eval_bringup`
+2. 跑 `scripts/setup_libero.sh`（装 venv + 补齐 HF 本地镜像）
+3. clone `third_libs/SimplerEnv/` 并 apply `scripts/patches/simpler_env_observation_utils.patch`
+4. 下 ckpt + HF cache（git 里没有，太大）
+
+**为什么**：`.gitignore` 屏蔽了 `third_libs/` / `cache/` / `ckpts/`。这是 MemoryVLA repo 的设计选择（这些是外部资产，不进 git）。

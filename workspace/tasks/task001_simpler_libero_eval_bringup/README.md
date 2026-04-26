@@ -1,4 +1,4 @@
-<!-- METADATA:STATUS=Open,ASSIGNEE= -->
+<!-- METADATA:STATUS=InProgress,ASSIGNEE=intern_memvla_developer -->
 
 # task001 — Simpler + LIBERO eval bringup
 
@@ -50,3 +50,7 @@ intern_memvla_developer
 ## 基础分支
 
 `openvla-codebase`
+
+## PR
+
+https://github.com/StevenKKXS/MemoryVLA/pull/1（Open，base `StevenKKXS:openvla-codebase`）
