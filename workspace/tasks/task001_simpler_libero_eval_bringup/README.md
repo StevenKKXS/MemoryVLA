@@ -50,3 +50,7 @@ intern_memvla_developer
 ## 基础分支
 
 `openvla-codebase`
+
+## PR
+
+https://github.com/StevenKKXS/MemoryVLA/pull/1（Open，base `StevenKKXS:openvla-codebase`）

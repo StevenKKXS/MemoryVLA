@@ -7,8 +7,8 @@
 | Name | intern_memvla_developer |
 | Status | Working |
 | Current Task | task001_simpler_libero_eval_bringup |
-| PR | PR #23 将 close（base 错了，upstream）；主管将在 StevenKKXS fork 内重开 |
-| Session | 5 |
+| PR | https://github.com/StevenKKXS/MemoryVLA/pull/1（base: StevenKKXS:openvla-codebase ← head: StevenKKXS:intern_memvla_developer/task001_simpler_libero_eval_bringup，Open，7 commits）|
+| Session | 6 |
 
 ## Session 4（2026-04-26 08:00 →）— task001 PR 整合
 
@@ -37,7 +37,19 @@
 - 收到新 PR URL 后回写
 - 等 review，按 comment 推增量 commit
 
-## Session 5（2026-04-26 → 进行中）— PR base 纠偏
+## Session 6（2026-04-26 → ）— PR 重开成功
+
+主管在 StevenKKXS fork 内重开了 PR：**https://github.com/StevenKKXS/MemoryVLA/pull/1**
+- base: `StevenKKXS:openvla-codebase`
+- head: `StevenKKXS:intern_memvla_developer/task001_simpler_libero_eval_bringup`
+- Open，7 commits
+
+### 下一步
+- 等主管 review PR #1
+- 按 comment 推增量 commit 到 feature branch
+- merge 后：删本地分支、status 切回 Idle
+
+## Session 5（2026-04-26）— PR base 纠偏
 
 ### 问题发现
 主管发现 PR #23 base 落到了 upstream `shihao1895:openvla-codebase`（不是他自己 fork）。
@@ -48,5 +60,5 @@
 - feature branch 代码未动（remote HEAD = efd403b 维持不变）
 - 更新 task_knowledge 知识点 6 强化"base owner 不能跨 fork 修改"
 
-### 等主管
-- 发新 PR URL 过来
+### 结果
+主管在 Session 6 成功重开 PR → #1（见上）。

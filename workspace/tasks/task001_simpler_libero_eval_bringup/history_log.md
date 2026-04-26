@@ -1,4 +1,4 @@
-<!-- METADATA:SESSION=2 -->
+<!-- METADATA:SESSION=3 -->
 
 # history_log — task001_simpler_libero_eval_bringup
 
@@ -65,3 +65,21 @@ A：够（代码层面完整）。需要补充：
 ### 未完
 
 - 等主管发新 PR URL，我回写 status.md / history_log / task README
+
+## Session 3 — PR 重开确认（2026-04-26）
+
+主管在 StevenKKXS fork 内重开 PR：**https://github.com/StevenKKXS/MemoryVLA/pull/1**
+- Base：`StevenKKXS:openvla-codebase` ✅
+- Head：`StevenKKXS:intern_memvla_developer/task001_simpler_libero_eval_bringup` ✅
+- Open，7 commits
+
+WebFetch 验证 base/head 均落在 StevenKKXS fork 内部，修复目标达成。
+
+### 回写
+- status.md：PR 字段 → #1，Session 6
+- README.md：加 PR 字段
+- task_knowledge.md：SESSION=3（知识点无新增）
+
+### 未完
+- 等 review，按 comment 推增量 commit
+- merge 后切 Idle、清理本地分支
