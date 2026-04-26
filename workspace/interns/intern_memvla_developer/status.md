@@ -1,14 +1,44 @@
 # intern_memvla_developer - 状态
 
-<!-- METADATA:STATUS=Working,TASK=task001_simpler_libero_eval_bringup -->
+<!-- METADATA:STATUS=Idle,TASK= -->
 
 | 字段 | 值 |
 |------|-----|
 | Name | intern_memvla_developer |
-| Status | Working |
-| Current Task | task001_simpler_libero_eval_bringup |
-| PR | https://github.com/StevenKKXS/MemoryVLA/pull/1（base: StevenKKXS:openvla-codebase ← head: StevenKKXS:intern_memvla_developer/task001_simpler_libero_eval_bringup，Open，7 commits）|
-| Session | 6 |
+| Status | Idle |
+| Current Task | |
+| PR | N/A（最近完成：[PR #1](https://github.com/StevenKKXS/MemoryVLA/pull/1) merged as 2714f4e）|
+| Session | 7 |
+
+## Session 7（2026-04-26）— task001 merged，收尾
+
+PR #1 已 merge 进 `StevenKKXS:openvla-codebase`（merge commit `2714f4e`），feature branch 完整合入。
+
+### 收尾动作
+- status.md → Idle（当前无任务）
+- task README METADATA → Completed
+- task_knowledge.md 中有价值的知识条目精炼进 `workspace/interns/intern_memvla_developer/knowledge.md`
+- 本地 openvla-codebase pull 同步到 2714f4e
+- 删除本地 feature branch
+- 清理临时 debug/outputs
+
+### task001 最终交付（现已落 openvla-codebase）
+- 8 个文件改动 + docs：evaluator unwrap + ENOSPC guard / eval 脚本 / setup_libero.sh / SimplerEnv patch / vla dlimp guard / .gitignore fix / docs/eval_reproduction.md
+- 两个 eval 复现结果：
+  - Bridge avg **0.7292** vs paper 0.7188 ✅
+  - LIBERO-Spatial **0.886**（Task 6 outlier；排除后 9-task avg = 0.984 = paper）
+
+## Session 6（2026-04-26）— PR 重开成功
+
+主管在 StevenKKXS fork 内重开了 PR：**https://github.com/StevenKKXS/MemoryVLA/pull/1**
+- base: `StevenKKXS:openvla-codebase`
+- head: `StevenKKXS:intern_memvla_developer/task001_simpler_libero_eval_bringup`
+- Open，7 commits
+
+### 下一步
+- 等主管 review PR #1
+- 按 comment 推增量 commit 到 feature branch
+- merge 后：删本地分支、status 切回 Idle
 
 ## Session 4（2026-04-26 08:00 →）— task001 PR 整合
 

@@ -1,4 +1,4 @@
-<!-- METADATA:SESSION=3 -->
+<!-- METADATA:SESSION=4 -->
 
 # history_log — task001_simpler_libero_eval_bringup
 
@@ -83,3 +83,19 @@ WebFetch 验证 base/head 均落在 StevenKKXS fork 内部，修复目标达成�
 ### 未完
 - 等 review，按 comment 推增量 commit
 - merge 后切 Idle、清理本地分支
+
+## Session 4 — Merge 收尾（2026-04-26）
+
+PR #1 merged（merge commit `2714f4e`，目标 `StevenKKXS:openvla-codebase`）。
+
+### 收尾动作
+- 本地 openvla-codebase pull fast-forward 到 2714f4e
+- status.md: STATUS Working → Idle, TASK 清空，PR 字段标"最近完成 #1 merged as 2714f4e"
+- task README: METADATA InProgress → Completed，PR 字段标 Merged + commit SHA
+- 精炼 task_knowledge 7 条到 `workspace/interns/intern_memvla_developer/knowledge.md`（加 2 条跨任务长期有用的：跨 fork PR base 规则 + eval baseline 数据）
+- 删除本地 feature branch `intern_memvla_developer/task001_simpler_libero_eval_bringup`
+- 清理 `../debug/` 和 `../outputs/`
+- 收尾 commit 直接 push openvla-codebase（workspace/ 管理文件，非代码，依 playbook 惯例）
+
+### 任务结束
+状态切回 Idle。

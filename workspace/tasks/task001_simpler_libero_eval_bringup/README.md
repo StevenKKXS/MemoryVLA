@@ -1,4 +1,4 @@
-<!-- METADATA:STATUS=InProgress,ASSIGNEE=intern_memvla_developer -->
+<!-- METADATA:STATUS=Completed,ASSIGNEE=intern_memvla_developer -->
 
 # task001 — Simpler + LIBERO eval bringup
 
@@ -53,4 +53,4 @@ intern_memvla_developer
 
 ## PR
 
-https://github.com/StevenKKXS/MemoryVLA/pull/1（Open，base `StevenKKXS:openvla-codebase`）
+https://github.com/StevenKKXS/MemoryVLA/pull/1（**Merged** as `2714f4e`，2026-04-26；base `StevenKKXS:openvla-codebase`）
