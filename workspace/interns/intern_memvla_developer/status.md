@@ -7,8 +7,8 @@
 | Name | intern_memvla_developer |
 | Status | Working |
 | Current Task | task001_simpler_libero_eval_bringup |
-| PR | https://github.com/shihao1895/MemoryVLA/pull/23（base: shihao1895:openvla-codebase ← head: StevenKKXS:intern_memvla_developer/task001_simpler_libero_eval_bringup，Open） |
-| Session | 4 |
+| PR | PR #23 将 close（base 错了，upstream）；主管将在 StevenKKXS fork 内重开 |
+| Session | 5 |
 
 ## Session 4（2026-04-26 08:00 →）— task001 PR 整合
 
@@ -33,6 +33,20 @@
 | LIBERO-Spatial | **0.886** | 0.984 | -0.098 ⚠（Task 6 outlier；排除后 9-task avg = 0.984 = paper）|
 
 ### 下一步
-- 等主管 review PR #23
-- 按 comment 推增量 commit 到 feature branch
-- merge 后：删 WIP.md（如留在 PR 里未剔）、删本地分支、status 切回 Idle
+- 主管 close PR #23 + 重开到 StevenKKXS fork 内
+- 收到新 PR URL 后回写
+- 等 review，按 comment 推增量 commit
+
+## Session 5（2026-04-26 → 进行中）— PR base 纠偏
+
+### 问题发现
+主管发现 PR #23 base 落到了 upstream `shihao1895:openvla-codebase`（不是他自己 fork）。
+
+### 做法
+- GitHub 不支持跨 fork 修改 base owner → 必须 close + 重开
+- 提供直达 compare URL：`https://github.com/StevenKKXS/MemoryVLA/compare/openvla-codebase...intern_memvla_developer/task001_simpler_libero_eval_bringup?expand=1`
+- feature branch 代码未动（remote HEAD = efd403b 维持不变）
+- 更新 task_knowledge 知识点 6 强化"base owner 不能跨 fork 修改"
+
+### 等主管
+- 发新 PR URL 过来

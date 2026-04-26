@@ -1,4 +1,4 @@
-<!-- METADATA:SESSION=1 -->
+<!-- METADATA:SESSION=2 -->
 
 # task_knowledge — task001_simpler_libero_eval_bringup
 
@@ -54,17 +54,18 @@
 
 **为什么**：`prismatic/models/backbones/llm/llama2.py` 用 `AutoConfig.from_pretrained` 加载 config 骨架，再从 .pt 灌权重。只需要 config+tokenizer 的 "mirror"，不需要 weight 文件。
 
-## 知识点 6 — 跨 fork PR 的 base 选择
+## 知识点 6 — 跨 fork PR 的 base 选择（重要！）
 
 **触发场景**：GitHub UI 上点 "Create pull request" 时，base 分支下拉默认会 fallback 到 upstream fork 的 default branch。
 
-**现象**：你以为是把 PR 打到自己的 fork（`StevenKKXS:openvla-codebase`），结果 base 被设成了 upstream（`shihao1895:openvla-codebase`）。PR 能开，但 merge 权限在 upstream owner 手里，不在你自己手里。
+**现象**：你以为是把 PR 打到自己的 fork（`StevenKKXS:openvla-codebase`），结果 base 被设成了 upstream（`shihao1895:openvla-codebase`）。PR 能开，但 merge 权限在 upstream owner 手里，不在你自己手里；同时也把你的"内部进展"当众 PR 给了 upstream，噪声。
 
 **解决**：
-- 如果想自己 merge：在 PR 页面上面有个 base 选择器，改成 `StevenKKXS:openvla-codebase`，再改 head。
-- 如果就是想打给 upstream owner review：保持默认即可（shihao1895 就是 upstream）。
+- 跨 fork base 无法通过 API/UI 编辑，必须关掉 PR 重开
+- 打直达链接 `https://github.com/<YourFork>/MemoryVLA/compare/<base>...<head>?expand=1` 直接 compare 同 repo 内的两个分支，避免被 GitHub 默认选 upstream
+- 例：`https://github.com/StevenKKXS/MemoryVLA/compare/openvla-codebase...intern_memvla_developer/task001_simpler_libero_eval_bringup?expand=1`
 
-**为什么**：GitHub "compare across forks" 默认假设你开 PR 是给 upstream 打的。想 merge 进自己的 fork 需要手动切 base。
+**为什么**：GitHub "compare across forks" 默认假设你开 PR 是给 upstream 贡献的。想在 fork 内部 merge，base 必须明确指到自己 fork。一旦 PR 创建后无法再跨 fork 切换 base owner，只能 close + 重开。
 
 ## 知识点 7 — Feature branch 自包含、但外部资产不在 git
 

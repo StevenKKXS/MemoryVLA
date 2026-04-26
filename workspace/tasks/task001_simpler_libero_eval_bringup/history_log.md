@@ -1,4 +1,4 @@
-<!-- METADATA:SESSION=1 -->
+<!-- METADATA:SESSION=2 -->
 
 # history_log — task001_simpler_libero_eval_bringup
 
@@ -43,3 +43,25 @@ A：够（代码层面完整）。需要补充：
 
 - 等主管 review / 反馈，按 PR comment 推增量 commit
 - merge 后：删 WIP.md、本地分支、把 status 切回 Idle
+
+## Session 2 — PR base 纠偏（2026-04-26）
+
+### 问题
+
+主管发现 PR #23 的 base 是 `shihao1895:openvla-codebase`（upstream），而不是他自己 fork `StevenKKXS:openvla-codebase`。意味着：
+1. merge 权限不在他手里
+2. 内部进展噪声发给 upstream
+
+### 处理
+
+- GitHub 不支持跨 fork 修改 base owner → 必须 close 旧 PR + 重开
+- 指导主管：
+  1. close PR #23（上游的）并附"wrong base repo, reopening in fork"
+  2. 打直达链接 `https://github.com/StevenKKXS/MemoryVLA/compare/openvla-codebase...intern_memvla_developer/task001_simpler_libero_eval_bringup?expand=1` 重新创建（这个 URL 强制在 StevenKKXS 内部 compare，避免被 GitHub UI 默认挑 upstream）
+  3. PR body 继续用 `workspace/tasks/task001_simpler_libero_eval_bringup/PR_BODY.md`
+- 本次 session 未改任何代码文件；feature branch 代码状态未变（remote HEAD = efd403b）
+- 更新 task_knowledge 知识点 6 强化"跨 fork PR base 只能 close + 重开"
+
+### 未完
+
+- 等主管发新 PR URL，我回写 status.md / history_log / task README
