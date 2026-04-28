@@ -71,7 +71,7 @@ bash $WORKSPACE/scripts/setup_libero.sh
 bash $WORKSPACE/scripts/setup_simpler.sh
 ```
 
-setup 脚本幂等，已经把所有踩过的坑（apt deps、numpy<2 pin、dlimp guard、LIBERO symlink dir、LLaMA local mirror、osmesa lib）写死。
+setup 脚本幂等，已经把所有踩过的坑（apt deps、numpy<2 pin、dlimp guard、LIBERO symlink dir、LLaMA local mirror、osmesa / vulkan lib）写死。Simpler 专项细节另见 `docs/simpler_env_setup.md`。
 
 ### 2.2 LIBERO eval
 
