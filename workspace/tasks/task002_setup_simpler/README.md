@@ -1,6 +1,6 @@
 # task002_setup_simpler - 补 Simpler 环境一键安装脚本 + 独立配套 doc
 
-<!-- METADATA:STATUS=Open,ASSIGNEE= -->
+<!-- METADATA:STATUS=InProgress,ASSIGNEE=intern_memvla_developer -->
 
 ## 背景
 

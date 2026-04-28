@@ -1,6 +1,6 @@
 # task002_setup_simpler - 任务知识
 
-<!-- METADATA:SESSION=0 -->
+<!-- METADATA:SESSION=1 -->
 
 > **编写规则**：每条一句话，格式：`N. 类别：内容`
 >

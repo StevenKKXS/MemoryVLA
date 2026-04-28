@@ -1,14 +1,32 @@
 # intern_memvla_developer - 状态
 
-<!-- METADATA:STATUS=Idle,TASK= -->
+<!-- METADATA:STATUS=Working,TASK=task002_setup_simpler -->
 
 | 字段 | 值 |
 |------|-----|
 | Name | intern_memvla_developer |
-| Status | Idle |
-| Current Task | |
-| PR | N/A（最近完成：[PR #1](https://github.com/StevenKKXS/MemoryVLA/pull/1) merged as 2714f4e）|
-| Session | 7 |
+| Status | Working |
+| Current Task | task002_setup_simpler |
+| PR | 待主管创建（base `StevenKKXS:openvla-codebase` ← head `StevenKKXS:intern_memvla_developer/task002_setup_simpler`）|
+| Session | 8 |
+
+## Session 8（2026-04-28）— task002 补 Simpler setup + doc
+
+主管发现 task001 漏掉 `scripts/setup_simpler.sh`；PAI 容器已下线无法拷 3fs 残留，基于现有记录新写。
+
+### 本次产出
+- `scripts/setup_simpler.sh`（255 行，幂等）：apt（vulkan + mesa + osmesa 防身）+ venv `/root/envs/simpler` + numpy<2 pin + torch 2.2.0 + sapien 2.2.2 + transforms3d + clone SimplerEnv + apply `scripts/patches/simpler_env_observation_utils.patch` + ICD 检查 + LLaMA-2-7b 本地镜像 + memvla pip -e + smoke
+- `docs/simpler_env_setup.md`（175 行）：独立配套 doc — 硬件/容器要求、外部依赖、6 大踩坑、eval 怎么跑、LIBERO vs Simpler 差异表、交叉引用
+- 顺手把 `docs/eval_reproduction.md` §2.1 对 setup_simpler.sh 的引用 + 指向新 doc 完善
+
+### 分支状态
+- feature branch `intern_memvla_developer/task002_setup_simpler` 已推 origin
+- WIP commit `acb5eaf` 已在 remote；setup_simpler + doc + 接受任务 commit 稍后一并 push
+
+### 下一步
+- commit + push 本次产出
+- 主管打 PR（直达：`https://github.com/StevenKKXS/MemoryVLA/compare/openvla-codebase...intern_memvla_developer/task002_setup_simpler?expand=1`）
+- 等 review
 
 ## Session 7（2026-04-26）— task001 merged，收尾
 
